@@ -1,0 +1,91 @@
+Práctica 5
+----------
+Los objetivos de esta práctica son:
+
+	1) Realizar ingeniería reversa de una base de datos
+	2) Integrar fuentes de datos heterogéneas para generar informacion nueva
+	3) Realizar visualizaciones geográficas
+	
+Introduccion
+------------
+
+La ingeniería reversa de una base de datos es el proceso por el cual 
+se extrae la definición de la base y se pueden visualizar las relaciones 
+de las entidades implementadas.
+
+Para realizar ingeniería reversa de una base de datos postgres se 
+puede usar el siguiente cliente (sqldeveloper):
+
+http://sqldeveloper.solyp.com/download/index.html
+
+					****
+
+Para integrar python y postgres ver el siguiente tutorial:
+
+http://zetcode.com/db/postgresqlpythontutorial/
+
+					****
+					
+Un mapa Choropleth es un tipo de mapa geográfico que permite 
+visualizar mediciones en base a la distribución de colores: 
+
+https://en.wikipedia.org/wiki/Choropleth_map
+
+Para procesar la información geográfica vamos a emplear el módulo de
+python GeoPandas que permite integrar las estructuras de datos de 
+pandas (Series y DataFrames) con las visuzlizaciones.
+
+					****
+					
+Ejercicio 1
+-----------
+
+Analizar los programas de ejemplo:
+	- colors.py: permite visualizar los distintos mapas de colores que 
+	provee el módulo matplotlib
+	- prueba.py: construye algunos mapas (mundial, y de América del 
+	Sur) con GeoPandas; revisar las columnas del DataFrame "world"
+
+Ejercicio 2
+-----------
+
+En base al archivo "top-1m.csv" de la práctica 4, generar los 
+siguientes gráficos:
+
+1) Un mapa en escala de grises que refleje la cantidad de sitios 
+web por cada país.
+
+2) Un mapa de la distribución de instituciones educativas en Asia.
+
+3) Idem punto 2) para América del Sur, pero que además de tener en 
+cuenta la cantidad de instituciones en cada país, contemple la 
+relevancia de las instituciones. La "relevancia" de un sitio web lo 
+definimos como la inversa del orden que ocupa en el archivo (o sea: el sitio 
+web más visitado es el más relevante y el último el menos relevante).
+
+Ejercicio 3
+-----------
+
+Ejecutar en postgres el script world.sql para crear la base de datos.
+
+1) Con la herramienta "sqldeveloper", Generar un DER de las tablas de 
+la base de datos (New Diagram >> Import objects)
+
+2) Realizar las siguientes consultas en SQL:
+	a) Cantidad de ciudades de América del Sur
+	b) Listar los lenguajes distintos de Asia
+	c) Los 5 paìses con mayor GNP
+
+Ejercicio 4
+-----------
+
+En base a la información de las tablas, construir los 
+siguientes gráficos:
+
+1) Un mapa de la población mundial
+
+2) Un mapa del producto bruto mundial
+
+3) Un mapa de la expectativa de vida mundial
+
+4) Un mapa de los países que hablan las 5 lenguas más populares
